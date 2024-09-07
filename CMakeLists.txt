@@ -10,6 +10,7 @@ file(GLOB SOURCES "src/*.cpp")
 add_executable(stealer WIN32 ${SOURCES})
 target_precompile_headers(stealer PRIVATE src/pch.hpp)
 target_compile_definitions(stealer PRIVATE "$<$<CONFIG:DEBUG>:DEBUG>")
+target_compile_options(stealer PRIVATE /GR-)
 
 set(BUILD_SHARED_LIBS OFF)
 
