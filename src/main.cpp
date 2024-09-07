@@ -10,7 +10,7 @@
 #include <array>
 #include <thread>
 
-int main() {
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow) {
 #if ANTIDBG
   if (is_debugged())
     return 0;

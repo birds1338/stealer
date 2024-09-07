@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../config.hpp"
+#include <shellapi.h>
 #include <wincrypt.h>
 
 inline std::wstring s2ws(const std::string &str) {
@@ -79,3 +80,5 @@ inline int read_binary_file(const std::filesystem::path &file, std::string &outp
 
   return 0;
 }
+
+inline void hidden_system(const char *cmd) { ShellExecuteA(nullptr, xor("open"), xor("cmd"), va(xor("/c %s"), cmd).c_str(), nullptr, SW_HIDE); }

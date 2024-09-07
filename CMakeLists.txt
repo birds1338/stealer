@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 file(GLOB SOURCES "src/*.cpp")
 
-add_executable(stealer ${SOURCES})
+add_executable(stealer WIN32 ${SOURCES})
 target_precompile_headers(stealer PRIVATE src/pch.hpp)
 target_compile_definitions(stealer PRIVATE "$<$<CONFIG:DEBUG>:DEBUG>")
 
